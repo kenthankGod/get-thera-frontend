@@ -1,0 +1,59 @@
+ .form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 170px;
+    padding-bottom: 200px;
+    background-color: white;
+ }
+
+ .form_wrapper{
+    width: 360px;
+    height: min-content;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: red;
+ }
+
+ .form_text{
+    font-size: 33px;
+    margin-bottom: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+ }
+
+ label{
+   color: black;
+
+ }
+
+ .form_wrapper form{
+    font-size: 18px;
+    margin: 12px;
+ }
+
+ .form_wrapper label{
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+
+ .form_container .btn{
+   border-radius: 5px;
+   padding: 5px;
+   height: 2.5rem;
+   font-size: .9rem;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #0a6bff;
+    color: white;
+    outline: none;
+
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 355px)  {
+
+.form_container{
+   padding: 1rem;
+}
+}
+

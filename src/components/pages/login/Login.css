@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800;900&display=swap');
+
+ .form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 170px;
+    padding-bottom: 200px;
+    font-family: 'Poppins', sans-serif;
+ }
+
+ .form_wrapper{
+    width: 360px;
+    height: min-content;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(105, 105, 170, 0.2) 0px 7px 29px 0px;
+ }
+
+ .form_text{
+    font-size: 33px;
+    font-weight: bold;
+    margin-bottom: 30px;
+   font-family: 'Poppins', sans-serif;
+ }
+
+ .form_wrapper form{
+    font-size: 18px;
+    margin: 12px;
+ }
+
+ /* .form-group .form-group input{
+   width: 20px;
+ } */
+
+ .form_wrapper label{
+  font-family: 'Poppins', sans-serif;
+  /* font-weight: 800; */
+  font-size: 1rem;
+ }
+
+ .form_wrapper form .form-group{
+    margin-bottom: 12px;
+ }
+
+ .form_container .btn{
+   border-radius: 5px;
+   padding: 5px;
+   width:110px;
+   height: 2.5rem;
+   font-size: .9rem;
+   font-family: 'Poppins', sans-serif; 
+    /* background-color: #161313; */
+    background-color: #0a6bff;
+    color: white;
+    outline: none;
+
+}
+
+.icon{
+   margin-bottom: 0.5rem;
+   color: #0a6bff;
+}
+
+/* @media screen and (max-width: 400px)  {
+   .form_wrapper{
+   margin-left: 16px;
+   }
+} */
