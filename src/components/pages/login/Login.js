@@ -30,7 +30,7 @@ const Login = () => {
 
     try {
       axios
-        .get(`http://localhost:3000/therapistBooking`, {
+        .get(`https://getthera.onrender.com/theapistBooking`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +44,7 @@ const Login = () => {
       if (error) {
         navigate("/login");
         if (error && error.response) {
-          console.log(error.response.data.message);
+          // console.log(error.response.data.message);
         }
       }
     }
@@ -53,7 +53,7 @@ const Login = () => {
   const handleChange = (e) => {
     e.preventDefault();
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
+    // console.log(formData);
   };
 
   const handleSubmit = async (e) => {
@@ -62,7 +62,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`http://localhost:3000/login`, formData);
+      const response = await axios.post(`https://getthera.onrender.com/login`, formData);
       console.log(response.data);
       localStorage.setItem("token", response.data.token);
       navigate("/therapistBooking");
