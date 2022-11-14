@@ -30,7 +30,7 @@ const SignUp = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`https://getthera.onrender.com/signup`, formData);
+      const response = await axios.post(`https://getthera-api.onrender.com/signup`, formData);
       console.log(response.data);
       if (response && response.data) {
         setIsLoading(false);

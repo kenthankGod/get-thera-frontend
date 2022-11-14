@@ -30,7 +30,7 @@ const Login = () => {
 
     try {
       axios
-        .get(`https://getthera.onrender.com/theapistBooking`, {
+        .get(`https://getthera-api.onrender.com/theapistBooking`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -62,7 +62,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`https://getthera.onrender.com/login`, formData);
+      const response = await axios.post(`https://getthera-api.onrender.com/login`, formData);
       console.log(response.data);
       localStorage.setItem("token", response.data.token);
       navigate("/therapistBooking");
