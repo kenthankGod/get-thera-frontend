@@ -63,7 +63,7 @@ const Header = () => {
     
     <Navbar collapseOnSelect expand="lg" className="navbar_container">
       <Container>
-        <Navbar.Brand href="/" ><span className="navbar_brand">getThera</span></Navbar.Brand>
+        <Navbar.Brand href="/" ><span className="navbar_brand">geThera</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav  className="ms-auto links">
