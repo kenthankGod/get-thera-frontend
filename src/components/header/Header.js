@@ -13,51 +13,6 @@ const Header = () => {
 
   return (
     <>
-        {/* <Navbar collapseOnSelect expand="lg" className="navbar shadow-none" fixed="top">
-          <Container fluid>
-            <Navbar
-              onClick={() => navigate("/")}
-              className="navbar_brand shadow-none"
-              href="/"
-            >
-             <span>thep</span> TALK.
-            </Navbar>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav
-                className="ms-auto my-2 my-lg-0 shadow-none"
-                navbarScroll
-              >
-
-                
-                <Nav.Link href="#">
-                  <Link to="/" className="links">
-                    Home
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href="#">
-                  <Link to="/therapistBooking" className="links">
-                    see therapists
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href="#">
-                  {" "}
-                  <Link to="/login" className="">
-                    {" "}
-                    <span className="sign_in_btn"><button>login{" "}</button></span>{" "}
-                  </Link>
-                </Nav.Link>
-                <Nav.Link href="#">
-                  {" "}
-                  <Link to="/signup" className="">
-                    {" "}
-                    <span className="sign_in_btn"><button>signup{" "}</button></span>
-                  </Link>
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar> */}
 
 
     
