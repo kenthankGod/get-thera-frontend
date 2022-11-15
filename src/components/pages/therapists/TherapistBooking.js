@@ -17,7 +17,7 @@ const TherapistBooking = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get(`https:///getthera-api.onrender.com/therapistBooking`, {
+      .get(`https://getthera-api.onrender.com/therapistBooking`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

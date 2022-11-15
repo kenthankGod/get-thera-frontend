@@ -30,7 +30,7 @@ const Login = () => {
 
     try {
       axios
-        .get(`https://getthera-api.onrender.com/theapistBooking`, {
+        .get(`https://getthera-api.onrender.com/therapistBooking`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
