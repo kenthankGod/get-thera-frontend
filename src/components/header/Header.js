@@ -6,10 +6,10 @@ import "./Header.css";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <>
