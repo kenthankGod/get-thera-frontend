@@ -31,7 +31,7 @@ const SignUp = () => {
 
     try {
       const response = await axios.post(`https://getthera-api.onrender.com/signup`, formData);
-      console.log(response.data);
+      console.log(response.data);      
       if (response && response.data) {
         setIsLoading(false);
         toast.success(response.data.message);
