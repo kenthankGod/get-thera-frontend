@@ -11,25 +11,21 @@ const SignUpForm = ({
 }) => {
   return (
     <>
-      <section className="form_container">
+      {/* <section className="form_container">
         <div className="form_wrapper">
           <form onSubmit={handleSubmit}>
             <span className="form_text text-center">
               <FaSignInAlt className="icon" /> SIGN UP
             </span>
 
-          
-
-          
-
             <div className="form-group">
-              <label className="form-label" htmlFor="userName">
+              <label className="form-label" htmlFor="username">
               Username
               </label>
               <input
                 className="form-control shadow-none"
-                type="username"
-                name="username"
+                type="text"
+                name="userName"
                 onChange={handleChange}
                 value={formData.userName}
               />
@@ -74,7 +70,7 @@ const SignUpForm = ({
             </div>
           </form>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

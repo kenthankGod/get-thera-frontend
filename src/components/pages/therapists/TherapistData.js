@@ -1,255 +1,274 @@
 const therapistData = [
   {
     id: 1,
+    priceId: "price_1MilWFFBoMY9P31pX55lwICX",
     name: "Dr. Anwuli Okoro",
     email: "okoroA@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/male8.webp",
     location: "abia",
-    amount: "U+20A6 30",
-    exp: "22 years of exp."
+    amount: 25000,
+    exp: "22 years of exp.",
   },
 
   {
     id: 2,
+    priceId: "price_1MilZSFBoMY9P31pgdM8SZhq",
     name: "Dr. Ebuka Uchendu",
     email: "Ebuka55@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/male9.jpg",
     location: "Imo state",
-    amount: "U+20A6 30",
-    exp: "5 years of exp."
+    amount: 10000,
+    exp: "5 years of exp.",
   },
 
   {
     id: 3,
+    priceId: "price_1MilbCFBoMY9P31pcwgACqyh",
     name: "Dr. Musa Garba",
     email: "mus100@gmail.com",
     iaAvailable: false,
     badge: "not available",
     image: "/images/male6.jpg",
     location: "Borno state",
-     amount: "U+20A6 30",
-     exp: "17 years of exp."
+    amount: 22000,
+    exp: "17 years of exp.",
   },
 
   {
     id: 4,
+    priceId: "price_1MilcqFBoMY9P31psDjXASWR",
     name: "Dr. Abdul Muhamed",
     email: "rAbdulg@gmail.com",
     iaAvailable: false,
     badge: "not available",
     image: "/images/male6.jpg",
     location: "Borno state",
-    amount: "U+20A6 30",
-    exp: "7 years of exp."
+    amount: 8000,
+    exp: "7 years of exp.",
   },
 
   {
     id: 5,
+    priceId: "price_1MileSFBoMY9P31p2lKdbZOz",
     name: "Dr. Edet Pwajok",
     email: "Alby400@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/male5.webp",
     location: "Abuja",
-    amount: "U+20A6 30",
-    exp: "3 years of exp."
+    amount: 6000,
+    exp: "3 years of exp.",
   },
 
   {
     id: 6,
+    priceId: "price_1MilftFBoMY9P31pFuT33uDP",
     name: "Dr. Bawa Abubakar",
     email: "Bawa@gmail.com",
     iaAvailable: true,
     badge: "not available",
     image: "/images/male3.avif",
     location: "Kano state",
-    amount: "U+20A6 30",
-    exp: "12 years of exp."
+    amount: 10000,
+    exp: "12 years of exp.",
   },
-  
 
   {
     id: 7,
+    priceId: " price_1MilhTFBoMY9P31pGKrp4zAd",
     name: "Dr. Olufemi Seun",
     email: "timcorrr@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/male2.avif",
     location: "Lagos state",
-    amount: "U+20A6 30",
-    exp: "7 years of exp."
+    amount: 10000,
+    exp: "7 years of exp.",
   },
 
   {
     id: 8,
+    priceId: "price_1MilivFBoMY9P31pUPQBextK",
     name: "Dr. Edet Sunday",
     email: "rosemary@gmail.com",
     iaAvailable: true,
     badge: "not available",
     image: "/images/male1.webp",
     location: "Bauchi state",
-     amount: "U+20A6 30",
-     exp: "7 years of exp."
+    amount: 10000,
+    exp: "7 years of exp.",
   },
 
   {
     id: 9,
+    priceId: "price_1MilkBFBoMY9P31plnQMtNg6",
     name: "Dr. Dawi Maidawa",
     email: "shangchi@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/male8.webp",
     location: "Borno state",
-    amount: "U+20A6 30",
-    exp: "6 years of exp."
+    amount: 10000,
+    exp: "6 years of exp.",
   },
 
   {
     id: 10,
+    priceId: "price_1MilljFBoMY9P31p9UuCy6s3",
     name: "Ama Pascal",
     email: "pascal@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/male1.webp",
     location: "Imo state",
-    amount: "U+20A6 30",
-    exp: "8 years of exp."
+    amount: 10000,
+    exp: "8 years of exp.",
   },
 
   {
     id: 11,
+    priceId: "price_1MilnVFBoMY9P31pP16WLgrn",
     name: "Fatimah Jbril",
     email: "drOlive@gmail.com",
     iaAvailable: false,
     badge: "not available",
     image: "/images/female1.jpeg",
     location: "Borno state",
-    amount: "U+20A6 30",
-    exp: "4 years of exp."
+    amount: 6500,
+    exp: "4 years of exp.",
   },
 
   {
     id: 12,
+    priceId: "price_1MilozFBoMY9P31preDqNc3A",
     name: "Dr. Chijioke Pince",
     email: "prince@gmail.com",
     iaAvailable: true,
     badge: "not available",
     image: "/images/male3.avif",
     location: "abia",
-    amount: "U+20A6 30",
-    exp: "6 years of exp."
+    amount: 10000,
+    exp: "6 years of exp.",
   },
 
   {
     id: 13,
+    priceId: "price_1MilqFFBoMY9P31p7JRZfGoq",
     name: "Dr. Ani Michael",
     email: "okoroA@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/male2.avif",
     location: "Rivers state",
-    amount: "U+20A6 30",
-    exp: "2 years of exp."
+    amount: 10000,
+    exp: "2 years of exp.",
   },
 
   {
     id: 14,
+    priceId: "price_1MilZSFBoMY9P31pgdM8SZhq",
     name: "Dr. Peter Obi",
     email: "peter@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/malll.webp",
     location: "Imo state state",
-     amount: "U+20A6 30",
-     exp: "9 years of exp."
+    amount: 19000,
+    exp: "9 years of exp.",
   },
 
   {
     id: 15,
+    priceId: "price_1MilryFBoMY9P31p0Y3kRTkP",
     name: "Dr. Boluwatife Rachel",
     email: "bolu@gmail.com",
     iaAvailable: false,
     badge: "not available",
     image: "/images/female1.jpeg",
     location: "Lagos state state",
-    amount: "U+20A6 30",
-    exp: "17 years of exp."
+    amount: 20000,
+    exp: "17 years of exp.",
   },
 
   {
     id: 16,
+    priceId: "price_1MiluxFBoMY9P31p9K5ECt0P",
     name: "Dr. Rukenwe Sandra",
     email: "rAbdulg@gmail.com",
     iaAvailable: false,
     badge: "not available",
     image: "/images/female4.jpg",
     location: "Cross River state",
-    amount: "U+20A6 30",
-    exp: "20 years of exp."
+    amount: 22000,
+    exp: "20 years of exp.",
   },
 
   {
     id: 17,
+    priceId: "price_1MilwCFBoMY9P31pzOfkLE3B",
     name: "Dr. Adaoma Scholar",
     email: "Alby400@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/female8.webp",
     location: "Imo state",
-    amount: "U+20A6 30",
-    exp: "9 years of exp."
+    amount: 9000,
+    exp: "9 years of exp.",
   },
 
   {
     id: 18,
+    priceId: "price_1MilxOFBoMY9P31pVP6sWaFW",
     name: "Dr. Hasana Faith",
     email: "faith@gmail.com",
     iaAvailable: true,
     badge: "not available",
     image: "/images/female5.webp",
     location: "Kano state",
-    amount: "U+20A6 30",
-    exp: "5 years of exp."
+    amount: 10000,
+    exp: "5 years of exp.",
   },
 
   {
     id: 19,
+    priceId: "price_1MilzrFBoMY9P31p4SZFquNV",
     name: "Dr. Tolu Bode",
     email: "bode@gmail.com",
     iaAvailable: true,
     badge: "available",
-    amount: "U+20A6 30",
     image: "/images/male1.webp",
-    location: "Lagos state",
-    exp: "10 years of exp."
+    amount: 10000,
+    exp: "10 years of exp.",
   },
 
-  { 
+  {
     id: 20,
+    priceId: "price_1Mim1dFBoMY9P31pOhYHAwuh",
     name: "Dr. Waji Isak",
     email: "isak@gmail.com",
     iaAvailable: true,
     badge: "not available",
     image: "/images/malll.webp",
     location: "Bauchi state",
-    amount: "U+20A6 30",
-    exp: "7 years of exp."
+    amount: 10000,
+    exp: "7 years of exp.",
   },
 
   {
     id: 21,
+    priceId: "price_1Mim3VFBoMY9P31puelqsEzE",
     name: "Dr. Baiwa Baba",
     email: "baba@gmail.com",
     iaAvailable: true,
     badge: "available",
     image: "/images/male6.jpg",
     location: "Borno state",
-    amount: "U+20A6 30",
-    exp: "10 years of exp."
+    amount: 11000,
+    exp: "10 years of exp.",
   },
 
   {
@@ -260,9 +279,9 @@ const therapistData = [
     badge: "available",
     image: "/images/male9.jpg",
     location: "Imo state",
-     amount: "U+20A6 30",
-     exp: "20 years of exp."
-  }
+    amount: 30000,
+    exp: "20 years of exp.",
+  },
 ];
 
 export default therapistData;

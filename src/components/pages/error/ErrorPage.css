@@ -2,10 +2,11 @@
     padding-top: 100px;
     padding-bottom: 100px;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .Error_container  h3{
-    font-size: 20rem;
+    font-size: 18rem;
 }
 
 .Error_container  h4{
@@ -19,8 +20,7 @@
     padding: 5px;
     height: 2.5rem;
     font-size: .9rem;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     background-color: chocolate;
+     background-color : blueviolet;
      color: white;
      outline: none;
      border: none;
@@ -28,7 +28,6 @@
 }
 
 .Error_container  h6{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 @media (max-width: 988px)  {

@@ -1,0 +1,87 @@
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.select_time{
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    padding-left: 8px;
+}
+
+.buttons{
+    margin: 10px;
+    height: 35px;
+    width: 200px;
+    display: block;
+    border: 1px solid blueviolet;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.buttons:hover{
+    background-color: blueviolet;
+    color: white;
+}
+
+
+/* MODAL */
+
+.modal-title{
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 100 !important;
+}
+
+.minutes_with{
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.with{
+    font-weight: 100;
+    font-size: 0.9rem;
+}
+
+.month_time_date{
+    font-size: 0.9rem;
+}
+
+.form-label{
+    font-size: 0.9rem !important;
+}
+
+.add_to_cat_btn{
+    background-color: #9300fe;
+    border: none;
+}
+
+.add_to_cat_btn:hover{
+    background-color: #9300fe;
+}
+
+.cancel_btn{
+    background-color: crimson;
+    border: none;
+}
+
+.cancel_btn:hover{
+    background-color: crimson;
+}
+
+@media screen and (max-width: 625px)   {
+    .buttons{
+        width: 230px;
+    }
+
+    .time_container{
+        padding-top:50px;
+    }
+}

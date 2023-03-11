@@ -3,15 +3,14 @@ import { FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const LoginForm = ({
-  handleSubmit,
-  handleChange,
-  formData,
-  isLoading,
-  toastError,
+  // handleSubmit,
+  // handleChange,
+  // formData,
+  // isLoading,
 }) => {
   return (
     <>
-      <section className="form_container">
+      {/* <section className="form_container">
         <div className="form_wrapper">
         <form onSubmit={handleSubmit}>
           <span className="form_text text-center"><FaSignInAlt className="icon" /> LOG IN</span>
@@ -58,8 +57,7 @@ const LoginForm = ({
           </div>
         </form>
         </div>
-      </section>
-      {toastError}
+      </section> */}
     </>
   );
 };

@@ -6,14 +6,21 @@
 }
 
 body{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Poppins', sans-serif; ;
+  background-color: red;
 }
 
-
-
-
-
-
+.buttons{
+  margin: 10px;
+  height: 40px;
+  width: 100px;
+  display: block;
+  border: 1px solid crimson;
+  border-radius: 5px;
+  color: black;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
 
 
 

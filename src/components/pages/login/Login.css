@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800;900&display=swap');
 
+
  .form_container{
     display: flex;
     justify-content: center;
@@ -10,12 +11,11 @@
  }
 
  .form_wrapper{
-    width: 360px;
+    width: 300px;
     height: min-content;
     padding: 20px;
-    border-radius: 12px;
     background-color: white;
-    box-shadow: rgba(105, 105, 170, 0.2) 0px 7px 29px 0px;
+    border: 1px solid rgb(205, 198, 198);
  }
 
  .form_text{
@@ -30,14 +30,14 @@
     margin: 12px;
  }
 
- /* .form-group .form-group input{
-   width: 20px;
- } */
+ .form-group input{
+   width: 15rem;
+   margin-top: -10px;
+ }
 
- .form_wrapper label{
+ .form-group {
   font-family: 'Poppins', sans-serif;
-  /* font-weight: 800; */
-  font-size: 1rem;
+  font-size: 14px;
  }
 
  .form_wrapper form .form-group{
@@ -47,24 +47,39 @@
  .form_container .btn{
    border-radius: 5px;
    padding: 5px;
-   width:110px;
+   width: 15rem;
    height: 2.5rem;
    font-size: .9rem;
    font-family: 'Poppins', sans-serif; 
-    /* background-color: #161313; */
-    background-color: #0a6bff;
+    background-color: blueviolet;
     color: white;
     outline: none;
-
 }
 
 .icon{
    margin-bottom: 0.5rem;
-   color: #0a6bff;
+   color: blueviolet;
 }
 
-/* @media screen and (max-width: 400px)  {
-   .form_wrapper{
-   margin-left: 16px;
+@media screen and (max-width: 600px)  {
+
+   
+ .form_container .btn{
+   width: 14rem;
+}
+   .form-group input{
+      width: 14rem;
+    }
+
+    .form_wrapper{
+      width: 280px;
    }
-} */
+
+   .form-group{
+      font-size: 14px;
+     }
+
+     .form-label{
+      font-size: 180px;
+     }
+}
