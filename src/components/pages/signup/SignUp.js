@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { FaUserPlus } from "react-icons/fa";
 import useAuthContext from "../../../context/auth_context/AuthContext";
 

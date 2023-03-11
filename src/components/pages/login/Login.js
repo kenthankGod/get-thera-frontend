@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import "./Login.css";
 import { FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useAuthContext from "../../../context/auth_context/AuthContext";
-import "react-toastify/dist/ReactToastify.css";
+
 
 const Login = () => {
   const [formData, setFormData] = useState({

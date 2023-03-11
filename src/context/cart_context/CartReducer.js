@@ -9,7 +9,7 @@ const CartReducer = (state, action) => {
       time: time,
       amount: amount
     };
-    console.log(state.cart);
+
     return {
       ...state,
       cart: [...state.cart, cartItems],
