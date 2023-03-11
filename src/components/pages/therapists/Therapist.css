@@ -100,4 +100,10 @@ justify-content: center;
 .banner .search_input{
     width: 100%;
 }
+
+.card{
+    width: 290px;
+    margin: 10px;
+}
+
     }

@@ -1,13 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
-import {Redirect, Outlet, Navigate, Route, useNavigate } from "react-router-dom";
-import useAuthContext from "../../context/auth_context/AuthContext";
+import {useNavigate } from "react-router-dom";
+
 
 
 const ProtectedRoutes = (props) => {
   const {Component} = props
-  // const { user, setUser } = useAuthContext();
-// console.log(`protected Route`, user)
 const navigate = useNavigate()
 
 useEffect(() =>  {

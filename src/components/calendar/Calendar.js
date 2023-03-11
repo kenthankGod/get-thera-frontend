@@ -50,7 +50,7 @@ const Calendar = () => {
       });
     }
     setDays(next10Days);
-  }, []);
+  }, [handleSetTherapist]);
 
   return (
     <>
@@ -60,9 +60,10 @@ const Calendar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
       >
+      
         <div className="calendar">
           <h6>
-            dates available for{" "}
+            select a meeting date with {" "}
             <span className="therapist_name">{therapistJson.name}</span> <br />
           </h6>
           <div className="date">

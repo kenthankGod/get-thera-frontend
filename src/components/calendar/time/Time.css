@@ -76,12 +76,13 @@
     background-color: crimson;
 }
 
-@media screen and (max-width: 625px)   {
+@media screen and (max-width: 600px)   {
     .buttons{
-        width: 230px;
+        width: 285px;
+        height: 40px;
     }
 
     .time_container{
-        padding-top:50px;
+        /* padding-top:50px; */
     }
 }

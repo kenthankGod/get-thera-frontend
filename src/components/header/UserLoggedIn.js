@@ -6,7 +6,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 import useAuthContext from "../../context/auth_context/AuthContext";
 
 const UserLoggedIn = () => {
-  const { user, logOut } = useAuthContext();
+  const { logOut } = useAuthContext();
 
   return (
     <div>
