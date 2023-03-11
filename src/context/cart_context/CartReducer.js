@@ -1,45 +1,82 @@
 const CartReducer = (state, action) => {
-  if (action.type === "ADD_TO_CART") {
-    const { id, time, date, amount } = action.payload;
+  switch (action.type) {
+    case "ADD_TO_CART": {
+      const { id, time, date, amount } = action.payload;
 
+      const cartItem = { id, date, time, amount };
 
-    const cartItems = {
-      id,
-      date: date,
-      time: time,
-      amount: amount
-    };
+      return {
+        ...state,
+        cart: [...(state.cart || []), cartItem],
+      };
+    }
 
-    return {
-      ...state,
-      cart: [...state.cart, cartItems],
-    };
+    case "REMOVE_FROM_CART": {
+      const updatedCart = (state.cart || []).filter(
+        (item) => item.id !== action.payload
+      );
 
-    // let cartProducts;
+      return {
+        ...state,
+        cart: updatedCart,
+      };
+    }
 
-    // cartProducts = {
-    //   id,
-    //   time: time,
-    //   date: date
-    // }
-    //       return {
-    //       ...state,
-    //       cart: [...state.cart, cartProducts],
-    //     };
+    default:
+      return state;
   }
-
-  if (action.type === `REMOVE_FROM_CART`) {
-    const updatedCart = state.cart.filter(
-      (cartItem) => cartItem.id !== action.payload
-    );
-    console.log(updatedCart);
-    return {
-      ...state,
-      cart: updatedCart,
-    };
-  }
-
-  return state;
 };
 
 export default CartReducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const CartReducer = (state, action) => {
+//   if (action.type === "ADD_TO_CART") {
+//     const { id, time, date, amount } = action.payload;
+
+
+//     const cartItems = {
+//       id,
+//       date: date,
+//       time: time,
+//       amount: amount
+//     };
+
+//     return {
+//       ...state,
+//       cart: [...state.cart, cartItems],
+//     };
+
+//   }
+
+//   if (action.type === `REMOVE_FROM_CART`) {
+//     const updatedCart = state.cart.filter(
+//       (cartItem) => cartItem.id !== action.payload
+//     );
+//     console.log(updatedCart);
+//     return {
+//       ...state,
+//       cart: updatedCart,
+//     };
+//   }
+
+//   return state;
+// };
+
+// export default CartReducer;
+
+
