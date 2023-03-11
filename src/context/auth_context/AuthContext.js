@@ -83,7 +83,7 @@ export const AuthProvider = ({ children }) => {
 
   const logOut = () => {
     setUser("");
-    // localStorage.removeItem("user");
+    localStorage.removeItem("user");
     window.location.href = "/";
   };
 

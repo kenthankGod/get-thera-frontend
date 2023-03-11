@@ -44,7 +44,12 @@
 
 /* MEDIA QUERY */
 
-@media (min-width: 355px)  {
+@media (max-width: 600px)  {
+
+   .form_wrapper{
+      width: 310px;
+    
+   }
 
 .form_container{
    padding: 1rem;

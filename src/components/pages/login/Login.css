@@ -15,7 +15,8 @@
     height: min-content;
     padding: 20px;
     background-color: white;
-    border: 1px solid rgb(205, 198, 198);
+    /* border: 1px solid rgb(205, 198, 198); */
+    box-shadow: 4px 4px 14px 3px rgba(0,0,0,0.1);
  }
 
  .form_text{
@@ -72,7 +73,7 @@
     }
 
     .form_wrapper{
-      width: 280px;
+      width: 310px;
    }
 
    .form-group{
