@@ -11,7 +11,7 @@ import { useCartContext } from "../../../context/cart_context/CartContext";
 
 const Time = () => {
   const { handleSetTime, date, time, therapistJson } = useTherapistContext();
-
+console.log( therapistJson.duration)
   const { addToCart } = useCartContext();
   const [show, setShow] = useState(false);
 
@@ -48,7 +48,7 @@ const Time = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <h6 className="select_time">select time:</h6>
+      <h6 className="select_time">Select time:</h6>
       {buttons.map((button) => {
         return (
           <button
@@ -66,7 +66,7 @@ const Time = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Booking Details:</Modal.Title>
+          <Modal.Title>Confirm Booking:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p className="minutes_with">
@@ -114,7 +114,7 @@ const Time = () => {
               className="add_to_cat_btn"
               onClick={() => {
                 handleClose();
-                addToCart(therapistJson.name, date, time, therapistJson.amount);
+                addToCart(therapistJson.name, date, time, therapistJson.amount, therapistJson.duration)
               }}
             >
               Book event

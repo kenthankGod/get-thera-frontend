@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
 import { FaUserPlus } from "react-icons/fa";
@@ -12,7 +12,7 @@ const SignUp = () => {
     email: "",
   });
 
-  const { signup, success, error, isLoading } = useAuthContext();
+  const { signup, isLoading } = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,18 +29,6 @@ const SignUp = () => {
     <>
       <section className="form_container">
         <div className="form_wrapper">
-          {success.message === "success" && (
-            <div className="alert alert-success" role="alert">
-              Sign up successful,{" "}
-              <Link to="/login">
-                <span className="fw-bold text-success">login</span>
-              </Link>
-            </div>
-          )}
-
-           {error && (<div className="alert alert-danger" role="alert">
-             {error}
-            </div>)}
           <form onSubmit={handleSubmit}>
             <span className="form_text text-center">
               <FaUserPlus className="icon" /> sign up
@@ -91,7 +79,7 @@ const SignUp = () => {
                 disabled={isLoading}
               >
                 {" "}
-                {isLoading === "pending" ? "submitting..." : "Sign up"}
+                {isLoading ? "submitting" : "Sign up"}
               </button>
               already have an account? <Link to="/login">login</Link>
             </div>

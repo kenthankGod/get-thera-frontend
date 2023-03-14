@@ -1,6 +1,6 @@
 .table_container{
     overflow: scroll;
-    padding-top: 200px;
+    padding-top: 20px;
     padding-bottom: 200px;
     margin-left: 20px;
     background-color: hsla(280, 73%, 87%, 0.2);
@@ -11,8 +11,9 @@
 .table_container h1 {
     text-align: center;
     margin-top: 50px;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 100;
+    color: gray;
   }
   
   table {
@@ -71,6 +72,27 @@
     background-color: #3e8e41;
   }
 
+  .paid_button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blueviolet;
+    opacity: 0.5;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px auto;
+   cursor: none;
+  }
+
+  .badge{
+    width: 50px;
+    padding: 8px;
+    background-color: rgb(129, 246, 164)
+    ;
+  }
+
   .no_bookings_left{
     padding-top: 250px;
     padding-bottom: 280px;
@@ -82,7 +104,12 @@
 
   @media only screen and (max-width: 600px) {
     .table_container{
-      padding-top: 200px;
+      padding-top: 90px;
       padding-bottom: 200px;
+  }
+
+  .table_container h1 {
+    font-size: 20px;
+    padding-left: 50px;
   }
     }

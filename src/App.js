@@ -14,6 +14,7 @@ import Login from "./components/pages/login/Login";
 import ProtectedRoutes from "./components/utils/ProtectedRoutes";
 import BookingsDashboard from "./components/pages/bookings/BookingsDashboard";
 import Calendar from "./components/calendar/Calendar";
+import Filter from "./components/pages/bookings/Filter";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/filter" element={<Filter />} />
 
           <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />

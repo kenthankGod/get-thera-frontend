@@ -43,7 +43,7 @@
 
 /* MEMDIA QUERY */
 
-@media (max-width: 600px) {
+@media (max-width: 390px) {
     .first_section .help_us{
         font-size: 30px;
         font-weight: 100;
@@ -68,8 +68,22 @@
     border-radius: 5px;
     margin: 20px auto;
     cursor: pointer;
-    width: 9rem;
+    width: 17.3rem;
      
+    }
+
+  }
+
+
+
+
+  @media (max-width: 390px) {
+    .first_section .help_us{
+        font-size: 50px;
+        font-weight: 100;
+        color: white;
+        letter-spacing: -1px;
+        text-align: left;
     }
 
   }

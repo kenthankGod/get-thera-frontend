@@ -62,8 +62,9 @@ const Calendar = () => {
       >
       
         <div className="calendar">
+          <h2>Select date: </h2>
           <h6>
-            select a meeting date with {" "}
+            pick a meeting date with {" "}
             <span className="therapist_name">{therapistJson.name}</span> <br />
           </h6>
           <div className="date">

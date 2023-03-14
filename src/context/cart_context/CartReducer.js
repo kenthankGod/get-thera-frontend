@@ -1,9 +1,9 @@
 const CartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART": {
-      const { id, time, date, amount } = action.payload;
+      const { id, time, date, amount, duration } = action.payload;
 
-      const cartItem = { id, date, time, amount };
+      const cartItem = { id, date, time, amount, duration};
 
       return {
         ...state,

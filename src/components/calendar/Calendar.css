@@ -4,11 +4,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsla(280, 73%, 87%, 0.2);
 }
 
 .calendar{
-  height: 320px;
+  height: 300px;
   border-radius: 10px;
   padding-top: 20px;
   margin: 10px;
@@ -24,9 +23,15 @@
 .calendar_and_time_container h6{
   padding-left: 12px;
   padding-top: 40px;
-  /* padding-bottom: 30px; */
   font-weight: 100;
   font-size: 14px;
+}
+
+.calendar h2{
+  font-size: 20px !important;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 8px;
+    font-weight: 100;
 }
 
 .date {
@@ -62,8 +67,7 @@
 
 
 .number:hover {
-  background-color: blueviolet;
-  color: white;
+  color: blueviolet;
 }
 
 
@@ -75,6 +79,7 @@
 
 .calendar{
   width: 95%;
+  height: 360px;
 }
 
   .number {

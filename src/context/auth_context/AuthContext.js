@@ -6,10 +6,8 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState("");
-
-  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
-  const [success, setSuccess] = useState({});
+
 
   useEffect(() => {
     const userInLocalStorage = JSON.parse(localStorage.getItem("user"));
@@ -21,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (formData) => {
     setIsLoading(true);
-    setError(null);
+
 
     try {
       const response = await axios.post(
@@ -31,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
       if (response && response.data) {
         setIsLoading(false);
-        setSuccess({ message: "success" });
+        toast.success("Singup Successful!");
         localStorage.setItem("user", JSON.stringify(response.data));
         setUser(response.data);
         setIsLoading(false);
@@ -39,7 +37,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       if (error && error.response) {
         setIsLoading(false);
-        setError(error.response.data.message);
+        toast.error(error.response.data.message);
         setIsLoading(false);
       }
 
@@ -52,7 +50,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (formData) => {
     setIsLoading(true);
-    setError(null);
+
 
     try {
       const response = await axios.post(
@@ -62,7 +60,7 @@ export const AuthProvider = ({ children }) => {
 
       if (response && response.data) {
         setIsLoading(false);
-        setSuccess({ message: "success" });
+        toast.success("Logged in!");
         localStorage.setItem("user", JSON.stringify(response.data));
         setUser(response.data);
         setIsLoading(false);
@@ -70,7 +68,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       if (error && error.response) {
         setIsLoading(false);
-        setError(error.response.data.message);
+        toast.error(error.response.data.message);
         setIsLoading(false);
       }
 
@@ -92,8 +90,6 @@ export const AuthProvider = ({ children }) => {
     login,
     logOut,
     isLoading,
-    error,
-    success,
     user,
   };
 

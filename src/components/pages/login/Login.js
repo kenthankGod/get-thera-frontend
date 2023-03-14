@@ -28,16 +28,12 @@ const Login = () => {
     <>
       <section className="form_container">
         <div className="form_wrapper">
-          {success.message === "success" && (
+          {/* {success.message === "success" && (
             <div className="alert alert-success" role="alert">
               login successful!
             </div>
-          )}
-          {error && (
-            <div className="alert alert-danger" role="alert">
-              {error}
-            </div>
-          )}
+          )} */}
+         
 
           <form onSubmit={handleSubmit}>
             <span className="form_text text-center">
