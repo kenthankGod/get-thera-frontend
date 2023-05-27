@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Satisfy&display=swap');
 
-footer{
+/* footer{
     display: flex;
     flex-direction: column;
   }
@@ -17,5 +17,25 @@ footer{
 @media only screen and (max-width: 768px) {
   .footer_container{
     flex-direction: column
+  }
+} */
+
+footer {
+  /* position: absolute;
+  bottom: 0; */
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer_wrapper{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer_wrapper {
+    flex-direction: column;
   }
 }

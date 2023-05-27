@@ -1,8 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
-import { FaUserPlus } from "react-icons/fa";
 import useAuthContext from "../../../context/auth_context/AuthContext";
 
 const SignUp = () => {
@@ -16,7 +15,6 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
     await signup(formData);
   };
 
@@ -27,65 +25,48 @@ const SignUp = () => {
 
   return (
     <>
-      <section className="form_container">
-        <div className="form_wrapper">
-          <form onSubmit={handleSubmit}>
-            <span className="form_text text-center">
-              <FaUserPlus className="icon" /> sign up
-            </span>
-
-            <div className="form-group">
-              <label className="form-label" htmlFor="username">
-                Username
-              </label>
-              <input
-                className="form-control shadow-none"
-                type="text"
-                name="userName"
-                onChange={handleChange}
-                value={formData.userName}
-              />
-              {/* {error} */}
-            </div>
-
-            <div className="form-group">
-              <label className="form-label" htmlFor="email">
-                Email
-              </label>
-              <input
-                className="form-control shadow-none"
-                type="email"
-                name="email"
-                onChange={handleChange}
-                value={formData.email}
-              />
-            </div>
-
-            <div className="form-group">
-              <label className="form-label" htmlFor="password">
-                Password
-              </label>
-              <input
-                className="form-control shadow-none"
-                type="password"
-                name="password"
-                onChange={handleChange}
-                value={formData.password}
-              />
-              <br />
-              <button
-                className="btn shadow-none"
-                type="submit"
-                disabled={isLoading}
-              >
-                {" "}
-                {isLoading ? "submitting" : "Sign up"}
-              </button>
-              already have an account? <Link to="/login">login</Link>
-            </div>
-          </form>
+      <div class="form_container">
+        <div className="form_container_text">
+          <p className="welcome_back">Welcome to gethera</p>
+          <p className="continue">Let's get you started. Create an account to begin</p>
         </div>
-      </section>
+        <form onSubmit={handleSubmit}>
+          <label className="form_label" htmlFor="username">
+            Username
+          </label>
+          <input
+            type="text"
+            name="userName"
+            onChange={handleChange}
+            value={formData.userName}
+            required
+          />
+          <label className="form_label" htmlFor="email">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            onChange={handleChange}
+            value={formData.email}
+            required
+          />
+          <label className="form_label" htmlFor="password">
+            Password
+          </label>
+          <input
+            type="password"
+            name="password"
+            onChange={handleChange}
+            value={formData.password}
+            required
+          />
+          <button className="form_button" type="submit">
+            {isLoading ? "submitting..." : "Sign up"}
+          </button>
+         <span className="already_have_account">already have an account? <Link to="/login" className="link">login</Link></span> 
+        </form>
+      </div>
     </>
   );
 };

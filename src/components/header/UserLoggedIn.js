@@ -10,7 +10,7 @@ const UserLoggedIn = () => {
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className="navbar_container">
+      <Navbar collapseOnSelect expand="lg" className="navbar_container fixed-top">
         <Container>
           <Navbar.Brand href="/">
             <span className="navbar_brand">geThera. </span>

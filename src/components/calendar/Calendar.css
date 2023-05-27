@@ -1,6 +1,5 @@
 .calendar_and_time_container{
-  padding-top: 100px;
-  padding-bottom: 150px;
+  padding-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +21,6 @@
 
 .calendar_and_time_container h6{
   padding-left: 12px;
-  padding-top: 40px;
   font-weight: 100;
   font-size: 14px;
 }
@@ -44,7 +42,7 @@
 
 .day {
   font-size: 18px;
-  font-weight: bold;
+ 
   width: 14.28%;
   text-align: center;
   padding: 10px 0;
@@ -61,8 +59,8 @@
   cursor: pointer;
   padding: 8px;
   transition-duration: 0.2s;
-  font-weight:300;
   font-size: 13px;
+  font-weight: 700;
 }
 
 

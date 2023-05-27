@@ -1,0 +1,148 @@
+import { createContext, useContext, useReducer, useEffect } from "react";
+import useAuthContext from "../auth_context/AuthContext";
+import reducer from "./CartReducer";
+
+const CartContext = createContext();
+
+const getCartDataFromLocStorage = (userEmail) => {
+  const cartDataFromLocStorage = localStorage.getItem("bookings");
+  if (!cartDataFromLocStorage ) {
+    return [];
+  } else {
+    // return JSON.parse(cartDataFromLocStorage);
+    const cartData = JSON.parse(cartDataFromLocStorage);
+    return cartData.filter((booking) => booking.userEmail === userEmail);
+  }
+};
+// ,
+// const initialSate = {
+//   cart: getCartDataFromLocStorage(),
+//   totalItem: "",
+//   totalAmount: "",
+// };
+
+const CartProvider = ({ children }) => {
+  const userFromLocalStorage = localStorage.getItem("user");
+  console.log(userFromLocalStorage)
+  const { user } = useAuthContext();
+  const [state, dispatch] = useReducer(reducer, {
+    cart: getCartDataFromLocStorage(userFromLocalStorage.email),
+  });
+
+
+
+
+  const addToCart = (id, date, time, amount, duration) => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: { id, date, time, amount, duration, userEmail: userFromLocalStorage.email },
+    });
+  };
+
+  const removeFromCart = (id) => {
+    dispatch({ type: "REMOVE_FROM_CART", payload: id });
+  };
+
+  // save items to localstorage
+  useEffect(() => {
+    localStorage.setItem("bookings", JSON.stringify(state.cart));
+  }, [state.cart, user.email]);
+
+  const value = {
+    ...state,
+    addToCart,
+    removeFromCart,
+  };
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+};
+
+const useCartContext = () => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCartContext must be used within CartContextProvider");
+  }
+
+  return context;
+};
+
+export { CartProvider, useCartContext };
+
+
+
+
+import React, { useEffect, useReducer } from 'react';
+
+function cartReducer(state, action) {
+  switch (action.type) {
+    case 'FETCH_CART':
+      return {
+        ...state,
+        cart: action.payload
+      };
+    case 'ADD_TO_CART':
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      };
+    default:
+      return state;
+  }
+}
+
+function Cart() {
+  const [state, dispatch] = useReducer(cartReducer, { cart: [] });
+
+  useEffect(() => {
+    async function fetchCart() {
+      try {
+        // Send a GET request to the server to retrieve the cart data
+        const response = await fetch('/cart', {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+        const data = await response.json();
+        dispatch({ type: 'FETCH_CART', payload: data });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    fetchCart();
+  }, []);
+
+  async function addToCart() {
+    try {
+      // Send a POST request to the server to add a new cart to the database
+      const response = await fetch('/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({
+          items: ['item1', 'item2', 'item3'],
+          total: 100.0
+        })
+      });
+      const data = await response.json();
+      dispatch({ type: 'ADD_TO_CART', payload: data });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  return (
+    <div>
+      <h1>Cart</h1>
+      <button onClick={addToCart}>Add to Cart</button>
+      <ul>
+        {state.cart.map((item, index) => (
+          <li key={index}>{item.name} - {item.price}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Cart;

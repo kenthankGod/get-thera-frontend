@@ -1,0 +1,43 @@
+.quote_container{
+    padding-top: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.quote_body{
+    border-radius: 8px;
+    border-left: 5px solid blueviolet;
+    /* background-color: rgba(138, 43, 226, .2); */
+}
+
+.quote_body p{
+    padding: 20px;
+    color: gray;
+    transition: 2s;
+}
+
+.left, .right{
+    color: blueviolet;
+}
+
+.quote_text {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .quote_text.show {
+    opacity: 1;
+  }
+ 
+
+  @media screen and (max-width: 768px) {
+
+    .quote_body{
+       font-size: 12px;
+    }
+
+    .quote_text_author{
+        color: red;
+    }
+
+  }

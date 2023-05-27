@@ -14,37 +14,38 @@ import Login from "./components/pages/login/Login";
 import ProtectedRoutes from "./components/utils/ProtectedRoutes";
 import BookingsDashboard from "./components/pages/bookings/BookingsDashboard";
 import Calendar from "./components/calendar/Calendar";
-import Filter from "./components/pages/bookings/Filter";
+import "./App.css";
 
 function App() {
   return (
     <>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/filter" element={<Filter />} />
+      <div className="main_container">
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-          <Route path="signup" element={<SignUp />} />
-          <Route path="login" element={<Login />} />
-          <Route
-            path="/therapistBooking"
-            exact
-            element={<ProtectedRoutes Component={TherapistBooking} />}
-          />
-          <Route
-            path="/calendar/:therapistId"
-            element={<ProtectedRoutes Component={Calendar} />}
-          />
-          <Route
-            path="/bookings"
-            element={<ProtectedRoutes Component={BookingsDashboard} />}
-          />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="login" element={<Login />} />
+            <Route
+              path="/therapistBooking"
+              exact
+              element={<ProtectedRoutes Component={TherapistBooking} />}
+            />
+            <Route
+              path="/calendar/:therapistId"
+              element={<ProtectedRoutes Component={Calendar} />}
+            />
+            <Route
+              path="/bookings"
+              element={<ProtectedRoutes Component={BookingsDashboard} />}
+            />
 
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-        <Footer />
-      </Router>
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </Router>
+      </div>
+      <Footer />
       <ToastContainer position="top-center" limit={1} />
     </>
   );

@@ -1,15 +1,18 @@
 .table_container{
     overflow: scroll;
     padding-top: 20px;
-    padding-bottom: 200px;
+    padding-bottom: 20px;
     margin-left: 20px;
-    background-color: hsla(280, 73%, 87%, 0.2);
     font-size: 14px;
+}
+
+.pending{
+  padding-top: 200px;
+  text-align: center;
 }
 
 
 .table_container h1 {
-    text-align: center;
     margin-top: 50px;
     font-size: 40px;
     font-weight: 100;
@@ -89,20 +92,40 @@
   .badge{
     width: 50px;
     padding: 8px;
-    background-color: rgb(129, 246, 164)
-    ;
+    background-color: rgb(129, 246, 164);
   }
 
-  .no_bookings_left{
-    padding-top: 250px;
-    padding-bottom: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
+.no_bookings_left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
 }
 
+.no_bookings_left p{
+  font-size: 20px;
+}
+
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 150px;
+}
+
+.loader p{
+ font-size: 200px;
+  padding-top: 150px;
+}
+
+
   @media only screen and (max-width: 600px) {
+    .pending{
+     font-size: 25px;
+      text-align: center;
+    }
     .table_container{
       padding-top: 90px;
       padding-bottom: 200px;
@@ -112,4 +135,9 @@
     font-size: 20px;
     padding-left: 50px;
   }
+
+  .no_bookings_left p{
+    font-size: 15px;
+  }
+
     }

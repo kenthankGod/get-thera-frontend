@@ -8,22 +8,20 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState("");
   const [isLoading, setIsLoading] = useState(null);
 
-
   useEffect(() => {
     const userInLocalStorage = JSON.parse(localStorage.getItem("user"));
 
     if (userInLocalStorage) {
       setUser(userInLocalStorage);
-    } 
+    }
   }, []);
 
   const signup = async (formData) => {
     setIsLoading(true);
 
-
     try {
       const response = await axios.post(
-        `https://getthera-api.onrender.com/signup`,
+        `https://gethera-app-api.onrender.com/signup`,
         formData
       );
 
@@ -51,10 +49,10 @@ export const AuthProvider = ({ children }) => {
   const login = async (formData) => {
     setIsLoading(true);
 
-
     try {
       const response = await axios.post(
-        `https://getthera-api.onrender.com/login`,
+        // `https://gethera-app-api.onrender.com/login`,
+        `https://gethera-app-api.onrender.com/login`,
         formData
       );
 
@@ -73,7 +71,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       if (error.message === "Request failed with status code 404") {
-        toast.error("Network Error can't register at the moment!");
+        toast.error("Network Error can't login at the moment!");
         setIsLoading(false);
       }
     }

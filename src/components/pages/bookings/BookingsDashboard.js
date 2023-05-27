@@ -1,27 +1,34 @@
 import { React, useState, useEffect } from "react";
 import "./BookingsDashboard.css";
+import MoonLoader from "react-spinners/MoonLoader";
 import { useCartContext } from "../../../context/cart_context/CartContext";
 import PaystackPop from "@paystack/inline-js";
 import useAuthContext from "../../../context/auth_context/AuthContext";
-import useTherapistContext from "../../../context/TherapistContext";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
+
 
 const BookingsDashboard = () => {
   const { user } = useAuthContext();
-  const {therapistJson} = useTherapistContext()
-  const { cart, removeFromCart } = useCartContext();
+  const { cart, removeFromCart, isLoading } = useCartContext();
+  const [showSecondModal, setShowSecondModal] = useState(false);
   const [paidItems, setPaidItems] = useState(
     JSON.parse(localStorage.getItem("paidItems")) || []
   );
-  console.log(cart);
 
+  const handleCloseSecondModal = () => {
+    setShowSecondModal(false);
+    window.location.replace("/bookings");
+  };
+  const handleShowSecondModal = () => {
+    setShowSecondModal(true);
+  };
 
-  //  this useEffect makes sue that the paidItems statye isnt lost 
+  //  this useEffect makes sure that the paidItems state isnt lost
   useEffect(() => {
     localStorage.setItem("paidItems", JSON.stringify(paidItems));
   }, [paidItems]);
-
-
-  
 
   // paystack popup function
   const payStackPaymentPopUp = (item) => {
@@ -37,19 +44,30 @@ const BookingsDashboard = () => {
     handler.openIframe();
   };
 
-  // check for empty cart
-  if (cart.length === 0) {
+  
+    if (isLoading) {
     return (
-      <div className="no_bookings_left">
-        <p>You curently have no bookings</p>
+      <div className="loader">
+        <MoonLoader color="blueviolet" size="50px" />
       </div>
     );
   }
 
+  // check for empty cart
+  if (cart && cart.length === 0) {
+    return (
+      <div className="no_bookings_left">
+        <p>You currently have no bookings yet</p>
+      </div>
+    );
+  }
+
+
+
   return (
     <>
+      <h1 className="pending">Your recent appointments</h1>
       <div className="table_container">
-        <h1>Pending Appointments</h1>
         <table>
           <tr>
             <th>Name</th>
@@ -60,47 +78,151 @@ const BookingsDashboard = () => {
             <th></th>
             <th></th>
           </tr>
-
-          {cart.map((item) => {
-            const isPaid = item.paid || paidItems.includes(item.id);
-            return (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.date}, 2023</td>
-                <td>{item.time}</td>
-                <td>{therapistJson.duration}</td>
-                <td>₦{item.amount}</td>
-                <td>
-                  {isPaid ? (
-                  <span class="badge rounded-pill bg-success">Paid</span>
-                  ) : (
+          {cart &&
+            cart.map((item) => {
+              const isPaid = item.paid || paidItems.includes(item.id);
+              return (
+                <tr key={item.id}>
+                  <td>{item.name}</td>
+                  <td>{item.date}, 2023</td>
+                  <td>{item.time}</td>
+                  <td>{item.duration}</td>
+                  <td>₦{item.amount}</td>
+                  <td>
+                    {isPaid ? (
+                      <span class="badge rounded-pill bg-success">Paid</span>
+                    ) : (
+                      <button
+                        class="pay_now_button"
+                        onClick={() => {
+                          payStackPaymentPopUp(item);
+                        }}
+                      >
+                        ₦ Pay Now
+                      </button>
+                    )}
+                  </td>
+                  <td>
                     <button
-                      class="pay_now_button"
-                      onClick={() => payStackPaymentPopUp(item)}
+                      className="delete_button"
+                      disabled={isLoading}
+                      onClick={() => {
+                        removeFromCart(item._id);
+                        handleShowSecondModal();
+                      }}
                     >
-                      ₦ Pay Now
+                      Delete
                     </button>
-                  )}
-                </td>
-                <td>
-                  <button
-                    className="delete_button"
-                    onClick={() => {
-                      setTimeout(() => {
-                        removeFromCart(item.id);
-                      }, 2000);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
+                  </td>
+                </tr>
+              );
+            })}
         </table>
+
+        <Modal show={showSecondModal} onHide={handleCloseSecondModal}>
+          <Modal.Header closeButton>
+          </Modal.Header>
+          <Modal.Body>
+            <p>Item successfully deleted!.</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              className="cancel_btn"
+              onClick={() => {
+                handleCloseSecondModal();
+              }}
+            >
+              close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </>
   );
 };
 
 export default BookingsDashboard;
+
+
+// {isLoading ? (
+//   <div className="loader">
+//     <MoonLoader color="blueviolet" size="100px" />
+//   </div>
+// ) : cart.length === 0 ? (
+//   <div className="no_bookings_left">
+//     <p>You currently have no bookings yet</p>
+//   </div>
+// ) : (
+//   <div>
+//     <h1 className="pending">Your recent appointments</h1>
+//     <div className="table_container">
+//       <table>
+//         <tr>
+//           <th>Name</th>
+//           <th>Date</th>
+//           <th>Time</th>
+//           <th>Duration</th>
+//           <th>Amount</th>
+//           <th></th>
+//           <th></th>
+//         </tr>
+//         {cart.map((item) => {
+//           const isPaid = item.paid || paidItems.includes(item.id);
+//           return (
+//             <tr key={item.id}>
+//               <td>{item.name}</td>
+//               <td>{item.date}, 2023</td>
+//               <td>{item.time}</td>
+//               <td>{item.duration}</td>
+//               <td>₦{item.amount}</td>
+//               <td>
+//                 {isPaid ? (
+//                   <span class="badge rounded-pill bg-success">Paid</span>
+//                 ) : (
+//                   <button
+//                     class="pay_now_button"
+//                     onClick={() => {
+//                       payStackPaymentPopUp(item);
+//                     }}
+//                   >
+//                     ₦ Pay Now
+//                   </button>
+//                 )}
+//               </td>
+//               <td>
+//                 <button
+//                   className="delete_button"
+//                   onClick={() => {
+//                     removeFromCart(item._id);
+//                     handleShowSecondModal();
+//                   }}
+//                 >
+//                   Delete
+//                 </button>
+//               </td>
+//             </tr>
+//           );
+//         })}
+//       </table>
+//     </div>{" "}
+//     {/* Closing tag for table_container */}
+//     <Modal show={showSecondModal} onHide={handleCloseSecondModal}>
+//       <Modal.Header closeButton>
+//         {/* <Modal.Title>Item successfully deleted</Modal.Title> */}
+//       </Modal.Header>
+//       <Modal.Body>
+//         <p>Item successfully deleted!.</p>
+//       </Modal.Body>
+//       <Modal.Footer>
+//         <Button
+//           className="cancel_btn"
+//           onClick={() => {
+//             handleCloseSecondModal();
+//           }}
+//         >
+//           close
+//         </Button>
+//       </Modal.Footer>
+//     </Modal>
+//   </div>
+// )}

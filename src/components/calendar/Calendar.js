@@ -5,8 +5,6 @@ import Time from "./time/Time";
 import "./Calendar.css";
 import { motion } from "framer-motion";
 
-
-
 const Calendar = () => {
   const { setDate, handleSetTherapist, therapistJson } = useTherapistContext();
   const [showTimeComp, setShowTimeComp] = useState(false);
@@ -60,29 +58,27 @@ const Calendar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
       >
-      
         <div className="calendar">
           <h2>Select date: </h2>
           <h6>
-            pick a meeting date with {" "}
+            pick a meeting date with{" "}
             <span className="therapist_name">{therapistJson.name}</span> <br />
           </h6>
           <div className="date">
-          {/* <span className="day">S</span>
+            {/* <span className="day">S</span>
             <span className="day">M</span>
             <span className="day">T</span>
             <span className="day">W</span>
             <span className="day">T</span>
             <span className="day">F</span>
             <span className="day">S</span> */}
-          
+
             {days.map((day, index) => (
               <span
                 className="number"
                 onClick={() => {
                   setDate(day.date);
                   openTimeComponent();
-                  console.log("Selected date:", day.day);
                 }}
                 key={index}
               >

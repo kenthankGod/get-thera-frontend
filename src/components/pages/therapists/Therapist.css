@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800;900&display=swap');
 
 
-/* .banner{
-    border: 1px solid rgb(203, 189, 189);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
-    background-color: rgb(251, 251, 251);
-    margin: 10px;
-} */
+.therapist_container{
+padding-top: 100px;
+}
 .select_menu_container{
     padding-left: 100px;
 }
@@ -55,7 +51,7 @@ option:hover{
 }
 
 .welcome_name p{
-    font-size: 1rem;
+    font-size: 1re;
 }
 
 .card_container{
@@ -82,8 +78,8 @@ justify-content: center;
 }
 
 .card img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
   }
   
@@ -137,6 +133,10 @@ justify-content: center;
 .select_menu_container span{
     font-size: 13px;
     color: gray;
+}
+
+.welcome_name p{
+    font-size: 13px;
 }
 
 .welcome_name h3{

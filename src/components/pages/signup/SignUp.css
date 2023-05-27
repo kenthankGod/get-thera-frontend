@@ -1,58 +1,120 @@
- .form_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 170px;
-    padding-bottom: 200px;
-    background-color: white;
+
+* {
+   box-sizing: border-box;
+ }
+ 
+ body {
+   font-family: Arial, sans-serif;
+   margin: 0;
  }
 
- .form_wrapper{
-    width: 360px;
-    height: min-content;
-    padding: 20px;
-    border-radius: 12px;
- }
 
- .form_text{
-    font-size: 33px;
-    margin-bottom: 30px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: black;
- }
 
- .form_wrapper form{
-    font-size: 18px;
-    margin: 12px;
+ .form_container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding-top: 100px;
  }
-
- .form_container .btn{
+ 
+ form {
+   width: 80%;
+   max-width: 500px;
+   padding: 20px;
+   background-color: #fff;
    border-radius: 5px;
-   width: 19rem;
-   padding: 5px;
-   height: 2.5rem;
-   font-size: .9rem;
-   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: blueviolet;
-    color: white;
-    outline: none;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ h2 {
+   text-align: center;
+   margin-bottom: 20px;
+ }
+ 
+ label {
+   display: block;
+   margin-bottom: 5px;
+ }
+
+  .form_label{
+   color: rgb(165, 161, 161);
+  }
+ 
+ input[type="text"],
+ input[type="email"],
+ input[type="password"] {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+ }
+ 
+
+
+ .form_button[type="submit"] {
+   background-color: blueviolet;
+   color: #fff;
+   width: 100%;
+   font-weight: bold;
+   border: none;
+   border-radius: 5px;
+   padding: 10px 20px;
+   cursor: pointer;
+   transition: background-color 0.2s ease;
+ }
+ 
+ .form_button[type="submit"]:hover {
+   background-color: blueviolet;
+   opacity: .6;
+ }
+
+
+ .form_container_text{
+  padding-top: 70px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 15px;
 }
 
-.alert-success{
-   width: auto;
+.form_container_text .welcome_back{
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 3px;
 }
 
-/* MEDIA QUERY */
+.continue{
+  font-size: 18px;
+  color: gray;
+}
 
-@media (max-width: 600px)  {
 
-   .form_wrapper{
-      width: 310px;
+ 
+ @media only screen and (max-width: 600px) {
+
+  
+ .form_button[type="submit"] {
+font-size: 12px;
+}
+
+  .form_label{
+   font-size: 12px;
+  }
+
+   form {
+      width: 100%;
+    box-shadow: none;
+    }
     
-   }
+    .form_button[type="submit"] {
+      padding: 17px 20px;
+    }
 
-.form_container{
-   padding: 1rem;
-}
-}
+    .already_have_account{
+      font-size: 12px;
+      color: gray;
+    }
 
+ }
+ 

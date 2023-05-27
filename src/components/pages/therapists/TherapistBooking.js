@@ -56,6 +56,8 @@ const TherapistBooking = () => {
 
   return (
     <>
+    <div className="therapist_container">
+      
       <motion.section
         className="banner p-5 text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -67,7 +69,7 @@ const TherapistBooking = () => {
         </div>
         <div className="welcome_name">
           <h3>Hey, {emailFromUser}!</h3>
-          <p>search and book your desired specialist...</p>
+          <p>search and book your desired therapist...</p>
         </div>
 
         <input
@@ -143,6 +145,7 @@ const TherapistBooking = () => {
           })
         )}
       </div>
+    </div>
     </>
   );
 };
